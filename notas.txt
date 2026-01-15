@@ -1,0 +1,14 @@
+<!-- <img height="300" v-bind:src="product.image" v-bind:alt="product.description"> -->
+
+        <!-- V-IF NÃO RENDERIZAE  -->
+
+        <!-- <p><strong v-if="product.stars > 0">{{ product.stars }}</strong></p> -->
+
+
+        <!-- <p>{{ product2.title }}</p> -->
+
+        <!-- <img height="300" :src="product2.image" :alt="product2.description"> -->
+
+        <!-- V-SHOW APENAS COLOCAR DISPLAY NONE  -->
+
+        <!-- <p><strong v-show="product2.stars > 0">{{ product2.stars }}</strong></p> -->
