@@ -13,7 +13,8 @@
     <div id="app">
         <div :style="styles">
             <label for="themeBlack">
-                <input type="checkbox" :checked="themeBlack" @click="toggleTheme" name="themeBlack" id="themeBlack"> Tema Escuro
+                <input type="checkbox" :checked="themeBlack" @click="toggleTheme" name="themeBlack" id="themeBlack">
+                Tema Escuro
             </label>
             <h1>{{ title }}</h1>
 
@@ -24,29 +25,21 @@
             <h3>Carrinho ({{ cart.length }})</h3>
 
             <ul>
-                <li v-for="(product, index) in products" :key="product.title">
-                    <p>{{ product.title }}</p>
+                <li v-for="(product, index) in products" :key="index">
+                    <product-detail :product="product" :product-in-cart="inCart(product)" @add-prod-cart="addCart">
+                    </product-detail>
+                </li>
 
-                    <img :src="product.image" :alt="product.description" height="300">
-
-                    <p v-if="product.stars > 0">
-                        <strong>{{ product.stars }}</strong>
-                    </p>
-                    <!-- <a href="#" @click.prevent="removeCart(product)" v-if="inCart(product)">
-                        Remover do Carrinho
-                    </a> -->
-
-                    <button v-on:click.prevent="addCart(product)" :disabled="inCart(product)">
-                        Adcionar no Carrinho
-                    </a>
-
-                </button>
             </ul>
         </div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
+    <script src="components/ProductDetails.js"></script>
+    <script>
+        app.mount('#app')
+    </script>
 </body>
 
 </html>
